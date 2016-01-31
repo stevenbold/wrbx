@@ -1,12 +1,62 @@
-<md-content class="padded-content-page">
-    <div layout="row" layout-align="center center">
-        <h2 class="md-display-3" translate>ASSISTANT.TITLE</h2>
+<div class="fff-overlay dashboard-container padded-content-page" layout="column" ng-controller="SquadController as squad">
+
+    <div class="drag-container" layout="row" layout-xs="column" layout-margin layout-padding dragula='"drag-analytics-container"'>
+        <tri-widget palette-background="deep-orange:500" content-layout="row" content-layout-align="space-between center" content-padding>
+            <div>
+                <md-icon class="font-size-5 opacity-50 margin-left-10" md-font-icon="fa fa-comments"></md-icon>
+            </div>
+            <div layout="column" layout-align="center end">
+                <p class="md-display-3 font-weight-100 margin-top-0 margin-bottom-0 text-ellipsis" countupto="10" decimals="0"></p>
+                <p class="md-body-2 opacity-60 margin-top-0 margin-bottom-0" translate>ASSISTANT.TITLE</p>
+            </div>
+        </tri-widget>
+        <tri-widget palette-background="triCyan:500" content-layout="row" content-layout-align="space-between center" content-padding>
+            <div>
+                <md-icon class="font-size-5 opacity-50 margin-left-10" md-font-icon="fa fa-twitter"></md-icon>
+            </div>
+            <div layout="column" layout-align="center end">
+                <p class="md-display-3 font-weight-100 margin-top-0 margin-bottom-0 text-ellipsis" countupto="101" decimals="0"></p>
+                <p class="md-body-2 opacity-60 margin-top-0 margin-bottom-0" translate>ASSISTANT.TITLE</p>
+            </div>
+        </tri-widget>
+        <tri-widget palette-background="indigo:500" content-layout="row" content-layout-align="space-between center" content-padding>
+            <div>
+                <md-icon class="font-size-5 opacity-50 margin-left-10" md-font-icon="fa fa-facebook"></md-icon>
+            </div>
+            <div layout="column" layout-align="center end">
+                <p class="md-display-3 font-weight-100 margin-top-0 margin-bottom-0" countupto="943" decimals="0"></p>
+                <p class="md-body-2 opacity-60 margin-top-0 margin-bottom-0" translate>ASSISTANT.TITLE</p>
+            </div>
+        </tri-widget>
     </div>
-    <div class="margin-20" layout="row" layout-align="center center">
-        <ul class="seed-list">
-            <li class="md-headline" ng-repeat="test in vm.testData">
-                {{test}}
-            </li>
-        </ul>
+
+   <div class="drag-container" layout="row" layout-xs="column" layout-margin layout-padding dragula='"drag-analytics-container"'>
+        <tri-widget class="fix-container">
+            <h1 style="text-align:center">Optimise Your DraftKings Lineup</h1>
+            <div ng-init="defaultSquad()">
+                <squad-info ng-hide="loading"></squad-info>
+                <pitch></pitch>            
+                <div layout="row">
+                    <md-button class="md-primary md-raised"  flex="100"  flex-gt-md="auto" ng-click="optimise()">Optimise Your Squad!
+                    </md-button>
+                </div>
+                <p>Include: {{ include}}</p>
+                <p>Exclude: {{exclude}}</p>
+                <h1>Optimisation Test</h1>
+                <div style="font-size:6px">
+                    {{players}}
+                </div>
+            </div>        
+        </tri-widget>
+        <tri-widget class="fix-container">
+            Somthing here
+        </tri-widget>
     </div>
-</md-content>
+
+</div>
+
+
+
+
+
+

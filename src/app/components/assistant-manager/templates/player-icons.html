@@ -1,0 +1,16 @@
+
+<div style="position: relative;">
+	<div ng-class="shirtclass" layout="row" layout-align="center center" style="margin-top: -15px">
+		<div hide show-gt-sm ng-click="togglelock(player)" class="lockdiv" ng-class="lockclass" class="unselectable">
+			<i ng-class="lockiconclass"></i>
+		</div>		
+		<div hide show-gt-sm>&nbsp;&nbsp;</div>
+		<div ng-controller="DialogCtrl">
+			<div ng-click="showPlayerInfo($event, player)" class="status status-{{ player.player.status}} unselectable">
+				<i class="fa fa-info"></i>
+			</div>
+		</div>
+	</div>
+</div>
+				
+					

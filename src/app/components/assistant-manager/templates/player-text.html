@@ -1,0 +1,13 @@
+<div ng-class="shirtclass" style="margin-top:5px">
+	<div class="player-text">
+		{{ player.player.last_name}}
+	</div>
+	<div hide>
+		vs. 
+		<span ng-class="{ 'uppercase': player.player.team.next_fixture.venue === 'Home' , 'lowercase': player.player.team.next_fixture.venue === 'Away'  }">
+			{{player.player.team.next_fixture.opposition_name|limitTo:3}}
+		</span>
+	</div>
+</div>
+				
+					

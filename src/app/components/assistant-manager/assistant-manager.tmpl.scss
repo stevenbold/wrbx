@@ -1,3 +1,115 @@
-.seed-list {
-  list-style: lower-greek;
+.fff-overlay {
+    background-color: #e4eaeb;
 }
+
+img.player {
+	max-width:100px;
+}
+
+.pitch {
+	background-image: url("/assets/images/pitch/pitch.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 520px;
+	max-width: 490px;
+	margin-left: auto;
+	display: block;
+	margin-right: auto;
+	padding-left:15px;
+	padding-right:15px;
+}
+
+.player-text {
+	color: white;
+	text-align: center;
+	background-color: #19803f;
+	border-radius: 4px;
+	font-weight: 400;
+	font-size:1em;
+}
+
+.pitch-shirt {
+	margin: auto;
+	max-width:70%;
+	min-width:55px;
+	display:block;
+}
+
+.unselectable {
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+}
+
+.status-a {
+	background-color: #50c8f1;
+}
+
+.greyscale {
+	filter: greyscale(100%);
+	-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+	opacity:0.5;
+}
+.no-greyscale {
+	filter: none;
+	opacity:1.0;
+}
+
+.lock-icon {
+	color: silver;
+	font-size:1.3em;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+.lowercase {
+	text-transform: lowercase;
+}
+
+.pitch-spinner {
+	width:80px;
+	margin: auto;
+}
+
+.lockdiv:focus {
+	outline: none;	
+}
+.lockdiv {
+	border-radius:50px;
+	color: #e5e7e7;
+	padding:0px;
+	width:25px;
+	text-align:center;
+
+}
+
+.status {
+	color: white;
+	padding:0px;
+	width:25px;
+	text-align:center;
+	border-radius:50px;
+	padding:0px;
+	width:25px;
+}
+.status:focus {
+	outline: none;	
+}
+
+.locked {
+	background-color: #cbda50;
+ }
+
+.unlocked {
+	background-color: #77767b;
+}
+
+.dismissed {
+	background-color: #77767b;
+}
+
+

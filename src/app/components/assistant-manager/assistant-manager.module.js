@@ -3,5 +3,7 @@
 
     angular
         .module('app.components.assistant-manager', [
+        	'squad-directives',
+        	'dialogs'
         ]);
 })();
