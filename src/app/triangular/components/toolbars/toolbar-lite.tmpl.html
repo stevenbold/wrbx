@@ -15,4 +15,8 @@
         <md-icon md-font-icon ng-class="vm.fullScreenIcon"></md-icon>
     </md-button>
 
+    <md-button ng-if="vm.isLoggedIn" ng-click="vm.logOut()" aria-label="Login">
+        <span translate="ADMIN.TOOLBAR.LOGOUT"></span>
+    </md-button>
+
 </div>

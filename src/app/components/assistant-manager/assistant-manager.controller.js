@@ -26,58 +26,60 @@
         vm.testData = [];
     }
 
-    function SquadController($http, API_CONFIG,$scope) {
+     /* @ngInject */
+    function SquadController($http, API_CONFIG, $scope, $mdToast, $filter, triSettings, DK) {
     	$scope.loading = true;
         //$scope.newsquad = [0,0,0];
         $scope.include = [];
         $scope.exclude = [];
         $scope.slots = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-        var root = API_CONFIG.url;
-        var root = 'http://127.0.0.1:8000/api/dk'
-        var path = '/squads/';
-        var url = root + path;
-        url = '/assets/testjson/squads.json'; //test data     
-        $scope.loading = true;
-        $scope.defaultSquad = function() {
-            $http.get(url)
-            .success(function(data){
+
+        $scope.defaultSquad = function (){
+            DK.getSquads().success(function(data){
                 $scope.players = data[0].players;
                 $scope.squadinfo = data[0];
             })
-            .error(function(errorData, errorStatus){
-                alert('$http error logged to console');
-                console.log(errorData);
-                console.log(errorStatus);
-                $scope.players = ['no data']
-                
+            .error(function(){
+                $mdToast.show(
+                    $mdToast.simple()
+                    .content($filter('translate')('ASSISTANT.MESSAGES.SQUAD_LOAD_ERROR'))
+                    .position('bottom right')
+                    .hideDelay(5000)
+                );
+                $scope.players = [];
             })
             .finally(function(){
                 $scope.loading = false;
             });
-        };
+        }
+
         $scope.optimise = function() {
-            alert('Include:' + $scope.include + ' Exclude: ' + $scope.exclude);
-            $http({
-                url: 'http://fantasyfootballfix.com/api/dk/optimization/',
-                method: 'post',
-                data: {
-                    include_codes: $scope.include,
-                    exclude_codes: $scope.exclude,
-                    risk: 0.5,
-                },
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .success (function(data) {
-                console.log("success");
+            $mdToast.show(
+                    $mdToast.simple()
+                    .content($filter('translate')('ASSISTANT.MESSAGES.OPTIMISATION_STARTED'))
+                    .position('bottom right')
+                    .hideDelay(5000)
+            );
+            DK.optimise($scope.include, $scope.exclude, 0.5)
+            .success(function(data){
+                $mdToast.show(
+                    $mdToast.simple()
+                    .content($filter('translate')('ASSISTANT.MESSAGES.OPTIMISATION_SUCCESS'))
+                    .position('bottom right')
+                    .hideDelay(5000)
+                );
                 $scope.players = data.players;
             })
             .error(function(data, status, headers, config){
-                console.log("error"+status + " H: "+data);
-                $scope.players = 'optimization failed :(';    
+                $mdToast.show(
+                    $mdToast.simple()
+                    .content($filter('translate')('ASSISTANT.MESSAGES.OPTIMISATION_ERROR'))
+                    .position('bottom right')
+                    .hideDelay(5000)
+                );
+                $scope.players = [];    
             });
-        };      
+        }      
     }
 
     function PlayerController($http, API_CONFIG,$scope) {

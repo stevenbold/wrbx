@@ -3,7 +3,7 @@
 
     angular
         .module('app.components', [
-        	'app.components.assistant-manager'
+            'app.components.assistant-manager'
         ]);
 
 })();

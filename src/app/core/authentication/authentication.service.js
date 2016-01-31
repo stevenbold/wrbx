@@ -5,7 +5,13 @@
       .module('app.core.authentication')
       .factory('Auth', Auth);
 
-    function Auth($http, $window, $state, $mdToast, $filter, triSettings, API_CONFIG, Profile) {
+    function Auth($http, $window, $state, $mdToast, $filter, triSettings, API_CONFIG) {
+
+        var user = {
+            name: '',
+            email: ''
+        }
+
         var Auth = {
             deleteToken: deleteToken,
             getToken: getToken,
@@ -17,7 +23,8 @@
             changePassword: changePassword,
             setToken: setToken,
             checkUniqueUser: checkUniqueUser,
-            isLoggedIn: isLoggedIn            
+            isLoggedIn: isLoggedIn,
+            user: user            
         };
 
         return Auth;
@@ -30,6 +37,7 @@
             }).
             success(function(data) {
                 Auth.setToken(data.token);
+                Auth.user.email = data.email;
                 $mdToast.show(
                     $mdToast.simple()
                     .content($filter('translate')('SIGNUP.MESSAGES.CONFIRM_SENT') + ' ' + data.email)
@@ -38,7 +46,7 @@
                     .highlightAction(true)
                     .hideDelay(0)
                 ).then(function() {
-                    $state.go('public.auth.login');
+                    $state.go('triangular.dff.assistant-manager');
                 });
             }).
             error(function() {
@@ -59,14 +67,14 @@
             }).
             success(function(data) {
                 Auth.setToken(data.token);
-                Profile.get();
+                Auth.user.email = data.email;
                 $mdToast.show(
                     $mdToast.simple()
-                    .content($filter('translate')('LOGIN.MESSAGES.SUCCESS') + ' ' + login_data.username )
+                    .content($filter('translate')('LOGIN.MESSAGES.SUCCESS') + ' ' + login_data.email )
                     .position('bottom right')
                     .hideDelay(1000)
                 ).then(function() {
-                    $state.go('triangular.admin-default.introduction');
+                    $state.go('triangular.dff.assistant-manager');
                 });
             }).
             error(function() {

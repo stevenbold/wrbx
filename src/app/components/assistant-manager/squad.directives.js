@@ -4,44 +4,44 @@
     angular
         .module('squad-directives', [
         ])
-        .directive("pitch", function() {
+        .directive('pitch', function() {
             return {
                 restrict: 'E',
-                templateUrl: "app/components/assistant-manager/templates/pitch.html"
+                templateUrl: 'app/components/assistant-manager/templates/pitch.html'
             };
         })
-        .directive("playerShirt", function() {
+        .directive('playerShirt', function() {
             return {
                 restrict: 'E',
-                templateUrl: "app/components/assistant-manager/templates/player-shirt.html"
+                templateUrl: 'app/components/assistant-manager/templates/player-shirt.html'
             };
         })
-        .directive("playerText", function() {
+        .directive('playerText', function() {
             return {
                 restrict: 'E',
-                templateUrl: "app/components/assistant-manager/templates/player-text.html"
+                templateUrl: 'app/components/assistant-manager/templates/player-text.html'
             };
         })
-        .directive("playerIcons", function() {
+        .directive('playerIcons', function() {
             return {
                 restrict: 'E',
-                templateUrl: "app/components/assistant-manager/templates/player-icons.html"
+                templateUrl: 'app/components/assistant-manager/templates/player-icons.html'
             };
         })
-        .directive("squadInfo", function() {
+        .directive('squadInfo', function() {
             return {
                 restrict: 'E',
-                templateUrl: "app/components/assistant-manager/templates/squad-info.html"
+                templateUrl: 'app/components/assistant-manager/templates/squad-info.html'
             };
         })
         .directive('defaultImg', function () {
             var defaultImg = {
                 link: function postLink(scope, iElement, iAttrs) {
                     iElement.on('error',function() {
-                        angular.element(this).attr("src", iAttrs.defaultImg);
+                        angular.element(this).attr('src', iAttrs.defaultImg);
                     });
                 }
-            }
+            };
             return defaultImg;
         });
 

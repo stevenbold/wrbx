@@ -23,7 +23,7 @@
             icon: 'zmdi zmdi-grade',
             type: 'link',
             state: 'triangular.dff.assistant-manager',
-            priority: 1.1,
+            priority: 1.1
         });
     }
 })();
