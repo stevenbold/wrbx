@@ -35,6 +35,15 @@ img.player {
 	display:block;
 }
 
+.fab-shirt {
+	width:82px;
+	height:65px;
+}
+
+.fab-shirt:hover {
+    cursor: pointer;
+}
+
 .unselectable {
 	-webkit-user-select: none; /* Chrome/Safari */        
 	-moz-user-select: none; /* Firefox */
@@ -45,7 +54,7 @@ img.player {
 }
 
 .status-a {
-	background-color: #50c8f1;
+	background-color: #50c8f1 !important;
 }
 
 .greyscale {

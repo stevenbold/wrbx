@@ -14,9 +14,13 @@
                 var thous = parseInt(number/1000);
                 var ones = number - (1000*thous);
                 var result = thous + ',' + ones;
-                var valid = isNaN(ones)
-                if (valid) {return ''}
-                else {return result};
+                var valid = isNaN(ones);
+                if (valid) {
+                    return '';
+                }
+                else {
+                    return result;
+                }
             };
         });
 
@@ -28,7 +32,7 @@
 
      /* @ngInject */
     function SquadController($http, API_CONFIG, $scope, $mdToast, $filter, triSettings, DK) {
-    	$scope.loading = true;
+        $scope.loading = true;
         //$scope.newsquad = [0,0,0];
         $scope.include = [];
         $scope.exclude = [];
@@ -51,7 +55,7 @@
             .finally(function(){
                 $scope.loading = false;
             });
-        }
+        };
 
         $scope.optimise = function() {
             $mdToast.show(
@@ -80,13 +84,13 @@
                 );
                 $scope.players = [];    
             });
-        }      
+        };      
     }
 
     function PlayerController($http, API_CONFIG,$scope) {
-    	$scope.lockiconclass = 'fa fa-unlock';
+        $scope.lockiconclass = 'fa fa-unlock';
         $scope.shirtclass = 'no-greyscale';
-        $scope.lockclass = 'unlocked' 
+        $scope.lockclass = 'unlocked'; 
 
         $scope.togglelock = function(player) {
             var player_id = player.player.code;
