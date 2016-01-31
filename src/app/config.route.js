@@ -18,7 +18,7 @@
             controller: function($state) {
                 var vm = this;
                 vm.goHome = function() {
-                    $state.go('triangular.admin-default.dashboard-analytics');
+                    $state.go('triangular.dff.assistant-manager');
                 };
             }
         })
@@ -30,7 +30,7 @@
             controller: function($state) {
                 var vm = this;
                 vm.goHome = function() {
-                    $state.go('triangular.admin-default.dashboard-analytics');
+                    $state.go('triangular.dff.assistant-manager');
                 };
             }
         });

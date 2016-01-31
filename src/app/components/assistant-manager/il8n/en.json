@@ -1,0 +1,10 @@
+{
+    "MENU": {
+        "ASSISTANT": {
+            "ASSISTANT": "Assistant Manager"
+        }
+    },
+    "ASSISTANT": {
+        "TITLE": "Welcome to Assistant Manager"
+    }
+}
