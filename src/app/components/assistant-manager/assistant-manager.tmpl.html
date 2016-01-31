@@ -54,11 +54,44 @@
             <div layout="column">
                 <p>Primary Radio : <strong>{{data.primary}}</strong></p>
                 <md-radio-group class="md-primary" ng-model="data.primary" ng-init="data.primary = 'Red'">
-                <md-radio-button value="Red">Red</md-radio-button>
-                <md-radio-button value="Green">Green</md-radio-button>
-                <md-radio-button value="Blue">Blue</md-radio-button>
-        </md-radio-group>
-    </div>
+                    <md-radio-button value="Red">Red</md-radio-button>
+                    <md-radio-button value="Green">Green</md-radio-button>
+                    <md-radio-button value="Blue">Blue</md-radio-button>
+                </md-radio-group>
+            </div>
+
+            <md-fab-speed-dial md-open="false" md-direction="down" ng-class="md-compass" class="md-compass">
+                <md-fab-trigger>
+                    <img 
+                        class="fab-shirt"
+                        default-img="/assets/images/players/default.png" 
+                        ng-class="shirtclass"
+                        ng-src="/assets/images/shirts/2015/11.png" 
+                        style=""
+                    />
+                </md-fab-trigger>
+                <md-fab-actions>
+                    <md-button aria-label="twitter" class="md-fab md-raised md-mini status-a">
+                        <md-icon md-font-icon="fa fa-unlock"></md-icon>
+                    </md-button>
+                    <md-button aria-label="twitter" class="md-fab md-raised md-mini status-a">
+                        <md-icon md-font-icon="fa fa-times"></md-icon>
+                    </md-button>
+                    <md-button aria-label="twitter" class="md-fab md-raised md-mini status-a">
+                        <md-icon md-font-icon="fa fa-lock"></md-icon>
+                        <md-tooltip md-direction="down" md-visible="tooltipVisible" md-autohide="false">
+                            Lock into Optimisation
+                        </md-tooltip>
+                    </md-button>
+                    <md-button aria-label="twitter" class="md-fab md-raised md-mini status-a">
+                        <md-icon md-font-icon="fa fa-info"></md-icon>
+                        <md-tooltip md-direction="up" md-visible="tooltipVisible" md-autohide="false">
+                            Player Information
+                        </md-tooltip>
+                    </md-button>
+                </md-fab-actions>
+            </md-fab-speed-dial>
+
         </tri-widget>
     </div>
 
