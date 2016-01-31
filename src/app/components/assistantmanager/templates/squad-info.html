@@ -1,0 +1,32 @@
+<div layout="column" layout-gt-sm="row" layout-margin>
+	<div flex layout="row" style="background-color:#ee6726; color: white"  layout-padding layout-align="center space-around">
+		<div flex layout-align="end end" style="text-align:center">
+			<div flex style="text-align:center">
+				<i class="fa fa-trophy" style="font-size:300%"></i>
+			</div>
+		</div>
+		<div flex layout="column" layout-align="center center">
+			<div class="md-headline">{{squadinfo.prediction_info.total_points_mean|number:0}}</div>
+			<div class="md-body-1" style="text-align:center">PREDICITED<br/>POINTS</div>
+		</div>
+	</div>
+	<div flex style="background-color:#50c8f1; color: white" layout="row" layout-padding layout-align="center space-around">
+		<div flex layout-align="end end" style="text-align:center">
+			<div flex>
+				<i class="fa fa-money" style="font-size:300%"></i>
+			</div>
+		</div>
+		<div flex layout="column" layout-align="center center">
+			<div class="md-headline">${{squadinfo.squad_info.total_current_salary|humanize}}</div>
+			<div class="md-body-1" style="text-align:center">TOTAL<br/>SALARY</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+				
+					

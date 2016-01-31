@@ -1,0 +1,13 @@
+<div class="pitch">
+	<md-grid-list md-cols="5" md-row-height="24%" md-gutter="5px">
+		<md-grid-tile ng-repeat="slot in slots">
+			<div ng-repeat="player in players track by $index">				
+				<div ng-show="player.slot === slot" ng-controller="PlayerController as playerCtrl">
+					<player-shirt></player-shirt>
+					<player-icons></player-icons>		
+					<player-text></player-text>
+				</div>
+			</div>			
+		<md-grid-tile>
+	</md-grid-list>
+</div>
