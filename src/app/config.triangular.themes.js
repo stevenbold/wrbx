@@ -46,6 +46,24 @@
             'contrastDefaultColor': 'light'
         });
 
+        $mdThemingProvider.definePalette('fixColors', {
+            '50': 'e4eaeb',  // grey background
+            '100': 'b6b6b6',
+            '200': '8c8c8c',
+            '300': '646464',
+            '400': '3a3a3a',
+            '500': 'cbda50',  // fix light green
+            '600': 'e1e1e1',
+            '700': '232323',
+            '800': '1a1a1a',
+            '900': '121212',
+            'A100': '3a3a3a',
+            'A200': 'ffffff',
+            'A400': 'ffffff',
+            'A700': 'ffffff',
+            'contrastDefaultColor': 'light'
+        });
+
         var triCyanMap = $mdThemingProvider.extendPalette('cyan', {
             'contrastDefaultColor': 'light',
             'contrastLightColors': '500 700 800 900',
@@ -209,17 +227,30 @@
         .logoTheme('light-green')
         .contentTheme('light-green');
 
+        // CUSTOM FIX COLOURS
+        triThemingProvider.theme('FIX')
+        .primaryPalette('fixColors', { 
+            'default': '500'
+        }) 
+        .accentPalette('pink')
+        .warnPalette('red');
+
+        triSkinsProvider.skin('custom', 'Custom Theme')
+        .sidebarTheme('white-cyan')
+        .toolbarTheme('FIX')
+        .logoTheme('FIX')
+        .contentTheme('FIX');
 
         /**
          *  FOR DEMO PURPOSES ALLOW SKIN TO BE SAVED IN A COOKIE
          *  This overrides any skin set in a call to triSkinsProvider.setSkin if there is a cookie
          *  REMOVE LINE BELOW FOR PRODUCTION SITE
          */
-        triSkinsProvider.useSkinCookie(true);
+        triSkinsProvider.useSkinCookie(false);
 
         /**
          *  SET DEFAULT SKIN
          */
-        triSkinsProvider.setSkin('cyan-cloud');
+        triSkinsProvider.setSkin('custom');
     }
 })();

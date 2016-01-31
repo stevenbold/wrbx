@@ -3,7 +3,8 @@
 
     angular
         .module('app.components', [
-            'app.components.assistantmanager'
+            'app.components.assistantmanager',
+            'app.components.toolbar'
         ]);
 
 })();

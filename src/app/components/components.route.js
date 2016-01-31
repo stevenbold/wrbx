@@ -8,13 +8,13 @@
     /* @ngInject */
     function routeConfig($stateProvider) {
         $stateProvider
-        .state('dfftest', {
+        .state('dff', {
             abstract: true,
             templateUrl: 'app/triangular/layouts/default/default.tmpl.html',
             controller: 'DefaultLayoutController',
             controllerAs: 'layoutController'
         })
-        .state('dff', {
+        .state('dff.main', {
             abstract: true,
             views: {
                 sidebarLeft: {
@@ -28,7 +28,7 @@
                     controllerAs: 'vm'
                 },
                 toolbar: {
-                    templateUrl: 'app/triangular/components/toolbars/toolbar.tmpl.html',
+                    templateUrl: 'app/components/toolbar/toolbar.tmpl.html',
                     controller: 'DefaultToolbarController',
                     controllerAs: 'vm'
                 },

@@ -6,7 +6,7 @@
         .config(moduleConfig);
 
     /* @ngInject */
-    function moduleConfig($translatePartialLoaderProvider, $stateProvider, triMenuProvider) {
+    function moduleConfig($translatePartialLoaderProvider, $stateProvider) {
         $translatePartialLoaderProvider.addPart('app/core/authentication');
 
         $stateProvider
@@ -45,32 +45,5 @@
             controllerAs: 'vm'
         });
 
-        triMenuProvider.addMenu({
-            name: 'MENU.AUTH.AUTH',
-            icon: 'icon-person',
-            type: 'dropdown',
-            priority: 4.1,
-            children: [{
-                name: 'MENU.AUTH.LOGIN',
-                state: 'authentication.login',
-                type: 'link'
-            },{
-                name: 'MENU.AUTH.SIGN_UP',
-                state: 'authentication.signup',
-                type: 'link'
-            },{
-                name: 'MENU.AUTH.FORGOT',
-                state: 'authentication.forgot',
-                type: 'link'
-            },{
-                name: 'MENU.AUTH.LOCK',
-                state: 'authentication.lock',
-                type: 'link'
-            },{
-                name: 'MENU.AUTH.PROFILE',
-                state: 'triangular.admin-default.profile',
-                type: 'link'
-            }]
-        });
     }
 })();

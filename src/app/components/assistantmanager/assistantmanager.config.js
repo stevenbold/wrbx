@@ -10,8 +10,8 @@
         $translatePartialLoaderProvider.addPart('app/components/assistantmanager');
 
         $stateProvider
-        .state('triangular.assistantmanager', {
-            url: '/test',
+        .state('dff.main.assistantmanager', {
+            url: '/assistant-manager',
             templateUrl: 'app/components/assistantmanager/assistantmanager.tmpl.html',
             // set the controller to load for this page
             controller: 'PageController',
@@ -20,7 +20,7 @@
 
         // add menu to triangular
         triMenuProvider.addMenu({
-            name: 'MENU.TEST.TEST',
+            name: 'MENU.ASSISTANT.ASSISTANT',
             state: 'dff.assistantmanager',
             type: 'link',
             icon: 'icon-info-outline',

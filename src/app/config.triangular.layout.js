@@ -15,7 +15,7 @@
 
         triLayoutProvider.setDefaultOption('contentClass', '');
 
-        triLayoutProvider.setDefaultOption('sideMenuSize', 'full');
+        triLayoutProvider.setDefaultOption('sideMenuSize', 'hidden');
 
         triLayoutProvider.setDefaultOption('showToolbar', true);
 
