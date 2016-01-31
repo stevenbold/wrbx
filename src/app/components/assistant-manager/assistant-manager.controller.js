@@ -32,8 +32,8 @@
         //$scope.newsquad = [0,0,0];
         $scope.include = [];
         $scope.exclude = [];
-        $scope.slots = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-
+        $scope.players = [];
+ 
         $scope.defaultSquad = function (){
             DK.getSquads().success(function(data){
                 $scope.players = data[0].players;
@@ -68,6 +68,7 @@
                     .position('bottom right')
                     .hideDelay(5000)
                 );
+                $scope.squadinfo = data;
                 $scope.players = data.players;
             })
             .error(function(data, status, headers, config){

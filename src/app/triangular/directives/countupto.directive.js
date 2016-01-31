@@ -34,6 +34,8 @@
                 suffix: ''
             };
 
+            var numAnim;
+
             // override default options?
             if ($scope.options) {
                 for(var option in options) {
@@ -45,12 +47,20 @@
 
             attrs.from = angular.isUndefined(attrs.from) ? 0 : parseInt(attrs.from);
             attrs.decimals = angular.isUndefined(attrs.decimals) ? 2 : parseFloat(attrs.decimals);
-            attrs.duration = angular.isUndefined(attrs.duration) ? 5 : parseFloat(attrs.duration);
+            attrs.duration = angular.isUndefined(attrs.duration) ? 2 : parseFloat(attrs.duration);
 
             $timeout(function() {
-                var numAnim = new CountUp($element[0], attrs.from, $scope.countupto, attrs.decimals, attrs.duration, options);
+                numAnim = new CountUp($element[0], attrs.from, $scope.countupto, attrs.decimals, attrs.duration, options);
                 numAnim.start();
-            }, 500);
+
+                $scope.$watch('countupto', function(value, oldValue) {
+                    if (angular.isDefined(value) && value != oldValue) {
+                        numAnim.update(value);
+                    }
+                });
+
+            }, 500); 
+
         }
     }
 
