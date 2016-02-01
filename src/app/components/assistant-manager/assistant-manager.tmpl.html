@@ -1,4 +1,4 @@
-<div class="fff-overlay dashboard-container padded-content-page" layout="column" ng-controller="SquadController as squad">
+<div class="fff-overlay dashboard-container" layout="column" ng-controller="SquadController as squad">
 
     <div class="drag-container" layout="row" layout-xs="column" layout-margin layout-padding dragula='"drag-analytics-container"'>
         <tri-widget palette-background="deep-orange:500" content-layout="row" content-layout-align="space-between center" content-padding>
@@ -31,7 +31,7 @@
     </div>
 
    <div layout="row" layout-xs="column" layout-margin layout-padding>
-        <tri-widget flex="45" class="fix-container">
+        <tri-widget flex="45" flex-xs="100" class="fix-container">
             <h1 class="md-headline" style="text-align:center">Optimise Your DraftKings Lineup</h1>
             <div ng-init="defaultSquad()">
                 <pitch></pitch>            
@@ -41,7 +41,7 @@
                 </div>
             </div>        
         </tri-widget>
-        <tri-widget flex="55" class="fix-container">
+        <tri-widget flex="55" flex-xs="100" class="fix-container">
 
             <div>
                 <md-tabs md-dynamic-height md-border-bottom>
