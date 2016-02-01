@@ -8,6 +8,8 @@
             "SETTINGS": "Settings",
             "PROFILE": "Profile",
             "LOGOUT": "Logout",
+            "LOGIN": "Login",
+            "SIGNUP": "Sign Up",
             "SIDEBAR_TOGGLE": "Toggle Menu"
         },
         "NOTIFICATIONS": {
