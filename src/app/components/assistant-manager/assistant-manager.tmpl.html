@@ -30,9 +30,9 @@
         </tri-widget>
     </div>
 
-   <div class="drag-container" layout="row" layout-xs="column" layout-margin layout-padding dragula='"drag-analytics-container"'>
-        <tri-widget class="fix-container">
-            <h1 style="text-align:center">Optimise Your DraftKings Lineup</h1>
+   <div layout="row" layout-xs="column" layout-margin layout-padding>
+        <tri-widget flex="45" class="fix-container">
+            <h1 class="md-headline" style="text-align:center">Optimise Your DraftKings Lineup</h1>
             <div ng-init="defaultSquad()">
                 <pitch></pitch>            
                 <div layout="row">
@@ -41,23 +41,21 @@
                 </div>
             </div>        
         </tri-widget>
-        <tri-widget class="fix-container">
-            Something here (just testing this sort of thing works OK when in draggable container)
-            <div layout="column">
-                <p>Default Radio : <strong>{{data.default}}</strong></p>
-                <md-radio-group ng-model="data.default" ng-init="data.default = 'Red'">
-                    <md-radio-button value="Red">Red</md-radio-button>
-                    <md-radio-button value="Green">Green</md-radio-button>
-                    <md-radio-button value="Blue">Blue</md-radio-button>
-                </md-radio-group>
-            </div>
-            <div layout="column">
-                <p>Primary Radio : <strong>{{data.primary}}</strong></p>
-                <md-radio-group class="md-primary" ng-model="data.primary" ng-init="data.primary = 'Red'">
-                    <md-radio-button value="Red">Red</md-radio-button>
-                    <md-radio-button value="Green">Green</md-radio-button>
-                    <md-radio-button value="Blue">Blue</md-radio-button>
-                </md-radio-group>
+        <tri-widget flex="55" class="fix-container">
+
+            <div>
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="Squad Stats">
+                        <md-content class="md-padding">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="Player Stats">
+                        <md-content class="md-padding">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
             </div>
 
             <md-fab-speed-dial md-open="false" md-direction="down" ng-class="md-compass" class="md-compass">
