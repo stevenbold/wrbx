@@ -19,4 +19,12 @@
         <span translate="ADMIN.TOOLBAR.LOGOUT"></span>
     </md-button>
 
+    <md-button ng-if="!vm.isLoggedIn" ng-click="vm.logIn()" aria-label="Login">
+        <span translate="ADMIN.TOOLBAR.LOGIN"></span>
+    </md-button>
+
+    <md-button ng-if="!vm.isLoggedIn" ng-click="vm.signUp()" aria-label="Login">
+        <span translate="ADMIN.TOOLBAR.SIGNUP"></span>
+    </md-button>
+
 </div>

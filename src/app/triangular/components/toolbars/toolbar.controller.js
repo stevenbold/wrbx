@@ -20,9 +20,9 @@
         vm.toggleFullScreen = toggleFullScreen;
         vm.isLoggedIn = Auth.isLoggedIn();
         vm.user = Auth.user;
-        vm.logIn = Auth.logIn;
+        vm.logIn = Auth.logInLink;
         vm.logOut = Auth.logOut;
-        vm.signUp = Auth.signUp;
+        vm.signUp = Auth.signUpLink;
 
         // initToolbar();
 
