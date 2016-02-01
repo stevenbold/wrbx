@@ -60,11 +60,10 @@
             // If the control is closed, hide the items behind the trigger
             if (!ctrl.isOpen) {
                 angular.forEach(items, function(item, index) {
-                    var newPosition, axis;
+                    var newTranslate;
                     var styles = item.style;
 
                     var triggerItemHeightOffset = (triggerElement.clientHeight - item.clientHeight) / 2;
-                    var triggerItemWidthOffset = (triggerElement.clientWidth - item.clientWidth) / 2;
 
                     var newY = -(item.scrollHeight * (index + 1) + triggerItemHeightOffset);
                     var newTranslate = 'translateY(' + newY + 'px)';
@@ -74,7 +73,7 @@
             }
             else {
                 angular.forEach(items, function(item, index) {
-                    var newPosition, axis;
+                    var newTranslate;
                     var styles = item.style;
 
                     var triggerItemHeightOffset = (triggerElement.clientHeight - item.clientHeight) / 2;
@@ -83,19 +82,19 @@
                     var newY = -(item.scrollHeight * (index + 1) + triggerItemHeightOffset);
 
                     if (index == 3) {
-                        newPosition = (item.scrollHeight + triggerItemHeightOffset) + newY - 10;
+                        var newPosition = (item.scrollHeight + triggerItemHeightOffset) + newY - 10;
                         var newTranslate = 'translateY(' + newPosition + 'px)';
                     }
                     if (index == 2) {
-                        newPosition = -(item.scrollHeight + triggerItemHeightOffset) + newY;
+                        var newPosition = -(item.scrollHeight + triggerItemHeightOffset) + newY;
                         var newTranslate = 'translateY(' + newPosition + 'px)';
                     }
                     if (index == 0){
-                        newPosition = (item.scrollWidth + triggerItemWidthOffset);
+                        var newPosition = (item.scrollWidth + triggerItemWidthOffset);
                         var newTranslate = 'translate(' + newPosition + 'px,' + newY + 'px)';
                     }
                     if (index == 1){
-                        newPosition = -(item.scrollWidth + triggerItemWidthOffset);
+                        var newPosition = -(item.scrollWidth + triggerItemWidthOffset);
                         var newTranslate = 'translate(' + newPosition + 'px,' +newY + 'px)';
                     }
 

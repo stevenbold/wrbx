@@ -2,7 +2,7 @@
     <div class="md-toolbar-tools" layout="row" layout-align="start center">
 
         <div class="sidebar-left-logo">
-            <img ng-src="{{::vm.sidebarInfo.appLogo}}" alt="{{::vm.sidebarInfo.appName}}" width="24px">
+            <img ng-src="{{::vm.sidebarInfo.appLogo}}" alt="{{::vm.sidebarInfo.appName}}" width="80px">
         </div>
 
         <h2 flex class="sidebar-left-title">{{::vm.sidebarInfo.appName}}</h2>
@@ -15,3 +15,7 @@
 </md-toolbar>
 
 <tri-menu md-theme="{{triSkin.elements.sidebar}}" flex></tri-menu>
+
+<md-content>
+	<md-divider></md-divider>
+</md-content>
