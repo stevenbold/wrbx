@@ -1,0 +1,21 @@
+{
+    "MENU": {
+        "ASSISTANT": {
+            "ASSISTANT": "Assistant Manager"
+        }
+    },
+    "ASSISTANT": {
+        "TITLE": "Welcome to Assistant Manager",
+        "MESSAGES": {
+        	"OPTIMISATION_SUCCESS": "Optimisation has finished",
+        	"OPTIMISATION_ERROR": "Optimisation has failed",
+        	"OPTIMISATION_STARTED": "Optimisation has started",
+        	"SQUAD_LOAD_ERROR": "Could not load squad"
+        },
+        "DIALOG": {
+            "PROJECTED_POINTS": "Projected Points",
+            "TOTAL_SALARY": "Total Salary",
+            "SALARY_REMAINING": "Salary Remaining"
+        }
+    }
+}
